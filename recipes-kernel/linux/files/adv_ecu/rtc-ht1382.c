@@ -137,7 +137,7 @@ static const struct rtc_class_ops ht1382_rtc_ops = {
 	.set_time	= ht1382_rtc_set_time,
 };
 
-static int ht1382_probe(struct i2c_client *client, const struct i2c_device_id *id)
+static int ht1382_probe(struct i2c_client *client)
 {
 	struct device *dev = &client->dev;
 	struct rtc_device *rtc;
