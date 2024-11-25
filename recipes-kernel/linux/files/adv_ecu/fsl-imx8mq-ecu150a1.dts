@@ -18,69 +18,6 @@
 		stdout-path = &uart1;
 	};
 
-	/*memory@40000000 {
-		device_type = "memory";
-		reg = <0x0 0x40000000 0 0x80000000>,
-		      <0x1 0x00000000 0 0x80000000>;
-	};*/
-
-	// memory@80000000 {
-	// 	device_type = "memory";
-	// 	reg = <0x00000000 0x80000000 0 0x40000000>;
-	// };
-
-	// reserved-memory {
-	// 	#address-cells = <2>;
-	// 	#size-cells = <2>;
-	// 	ranges;
-	// 	/*
-	// 	* reserved-memory layout
-	// 	* 0x8800_0000 ~ 0x8FFF_FFFF is reserved for M4
-	// 	* Shouldn't be used at A core and Linux side.
-	// 	*
-	// 	*/
-	// 	decoder_boot: decoder_boot@0x84000000 {
-	// 	no-map;
-	// 	reg = <0 0x84000000 0 0x2000000>;
-	// 	};
-	// 	encoder_boot: encoder_boot@0x86000000 {
-	// 		no-map;
-	// 		reg = <0 0x86000000 0 0x400000>;
-	// 	};
-	// 	rpmsg_reserved: rpmsg@0x90000000 {
-	// 		no-map;
-	// 		reg = <0 0x90000000 0 0x400000>;
-	// 	};
-	// 	rpmsg_dma_reserved:rpmsg_dma@0x90400000 {
-	// 		compatible = "shared-dma-pool";
-	// 		no-map;
-	// 		reg = <0 0x90400000 0 0x1C00000>;
-	// 	};
-	// 	decoder_rpc: decoder_rpc@0x92000000 {
-	// 		no-map;
-	// 		reg = <0 0x92000000 0 0x200000>;
-	// 	};
-	// 	encoder_rpc: encoder_rpc@0x92200000 {
-	// 		no-map;
-	// 		reg = <0 0x92200000 0 0x200000>;
-	// 	};
-	// 	dsp_reserved: dsp@0x92400000 {
-	// 		no-map;
-	// 		reg = <0 0x92400000 0 0x2000000>;
-	// 	};
-	// 	encoder_reserved: encoder_@0x94400000 {
-	// 		no-map;
-	// 		reg = <0 0x94400000 0 0x800000>;
-	// 	};
-	// 	/* global autoconfigured region for contiguous allocations */
-	// 	linux,cma {
-	// 		compatible = "shared-dma-pool";
-	// 		reusable;
-	// 		size = <0 0x3c000000>;
-	// 		alloc-ranges = <0 0x96000000 0 0x3c000000>;
-	// 		linux,cma-default;
-	// 	};
-	// };
 	memory@80000000 {
 		device_type = "memory";
 		reg = <0x00000000 0x80000000 0 0x40000000>;
@@ -211,26 +148,7 @@
 };
 
 &gpio5 {
-	led1 {
-		gpio-hog;
-		gpios = <3 GPIO_ACTIVE_HIGH>;
-		output-low;
-		line-name = "PL1";
-	};
-
-	led2 {
-		gpio-hog;
-		gpios = <4 GPIO_ACTIVE_HIGH>;
-		output-low;
-		line-name = "PL2";
-	};
-
-	led3 {
-		gpio-hog;
-		gpios = <5 GPIO_ACTIVE_HIGH>;
-		output-low;
-		line-name = "PL3";
-	};
+	gpio-line-names = "", "", "", "PL1", "PL2", "PL3";
 };
 
 &A53_0 {
