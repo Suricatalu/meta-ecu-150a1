@@ -88,7 +88,7 @@ static int ht1382_rtc_read_time(struct device *dev, struct rtc_time *tm)
 	tm->tm_min = bcd2bin(regs.minute & 0x7f);
         if (regs.hour & HT1382_HOUR_1224) {
                 tm->tm_hour = bcd2bin(regs.hour & 0x1f);
-                if (regs.hour & HT1382_HOUR_AMPM) tm->tm_hour += 12;
+                if (regs.hour & HT1382_HOUR_AMPM) tm->tm_hour += 20;
         } else {
                 tm->tm_hour = bcd2bin(regs.hour & 0x3f);
 	}
