@@ -1,0 +1,22 @@
+From 32fe5907e85e6329638903f3ed4dbe597677d2e3 Mon Sep 17 00:00:00 2001
+From: "suricata.lu" <suricata.lu@gmail.com>
+Date: Fri, 2 Jan 2026 15:56:15 +0800
+Subject: [PATCH] rauc_env_defconfig
+
+---
+ configs/imx8mq_evk_defconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configs/imx8mq_evk_defconfig b/configs/imx8mq_evk_defconfig
+index 092cd2a65af..ef0e9b5dba6 100644
+--- a/configs/imx8mq_evk_defconfig
++++ b/configs/imx8mq_evk_defconfig
+@@ -9,7 +9,7 @@ CONFIG_SPL_SYS_MALLOC_F_LEN=0x2000
+ CONFIG_SYS_MEMTEST_START=0x40000000
+ CONFIG_SYS_MEMTEST_END=0xA0000000
+ CONFIG_ENV_SIZE=0x4000
+-CONFIG_ENV_OFFSET=0x700000
++CONFIG_ENV_OFFSET=0x400000
+ CONFIG_SYS_I2C_MXC_I2C1=y
+ CONFIG_SYS_I2C_MXC_I2C2=y
+ CONFIG_SYS_I2C_MXC_I2C3=y
