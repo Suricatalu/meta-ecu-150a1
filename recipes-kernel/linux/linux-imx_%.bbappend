@@ -7,4 +7,3 @@ SRC_URI:append:imx8mq-ecu150a1 = " \
 
 DELTA_KERNEL_DEFCONFIG:imx8mq-ecu150a1 = "imx8mq_ecu150a1_defconfig"
 
-

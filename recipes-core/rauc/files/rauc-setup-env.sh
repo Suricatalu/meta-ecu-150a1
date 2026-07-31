@@ -13,19 +13,19 @@ ROOT_DEV=$(grep -oP 'root=/dev/\K[^ ]+' /proc/cmdline | sed 's/p[0-9]*$//')
 
 echo "Detected boot device: ${ROOT_DEV}"
 
-# Determine device paths
+# Determine device paths (no boot partition - rootfs_a is p1, rootfs_b is p2, data is p3)
 case "${ROOT_DEV}" in
     mmcblk0)
         DEVICE="/dev/mmcblk0"
-        SLOT0_DEV="/dev/mmcblk0p2"
-        SLOT1_DEV="/dev/mmcblk0p3"
-        DATA_DEV="/dev/mmcblk0p4"
+        SLOT0_DEV="/dev/mmcblk0p1"
+        SLOT1_DEV="/dev/mmcblk0p2"
+        DATA_DEV="/dev/mmcblk0p3"
         ;;
     mmcblk1)
         DEVICE="/dev/mmcblk1"
-        SLOT0_DEV="/dev/mmcblk1p2"
-        SLOT1_DEV="/dev/mmcblk1p3"
-        DATA_DEV="/dev/mmcblk1p4"
+        SLOT0_DEV="/dev/mmcblk1p1"
+        SLOT1_DEV="/dev/mmcblk1p2"
+        DATA_DEV="/dev/mmcblk1p3"
         ;;
     *)
         echo "ERROR: Unknown boot device: ${ROOT_DEV}" >&2

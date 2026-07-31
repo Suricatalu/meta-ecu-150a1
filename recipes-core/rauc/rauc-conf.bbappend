@@ -1,3 +1,9 @@
+# Only process this recipe if RAUC is enabled
+python () {
+    if d.getVar('RAUC_ENABLED') != '1':
+        raise bb.parse.SkipRecipe("RAUC is disabled (RAUC_ENABLED != '1')")
+}
+
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI += " \
